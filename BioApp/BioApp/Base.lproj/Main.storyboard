@@ -3,13 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--ModalView-->
         <scene sceneID="ZfE-1Y-hiP">
             <objects>
-                <viewControllerPlaceholder storyboardName="ModalView" id="5Gm-xT-HGo" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ModalView" referencedIdentifier="ModalView" id="5Gm-xT-HGo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EaN-1t-vZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1700.5" y="-42.75"/>
@@ -155,6 +156,7 @@
                         <viewControllerLayoutGuide type="bottom" id="E48-VU-5pp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bzM-Ay-6uh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza" translatesAutoresizingMaskIntoConstraints="NO" id="tNW-cR-VeT">
@@ -257,15 +259,15 @@
                                 <exclude reference="cFC-X3-9R7"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="JyR-EO-ICl"/>
-                                <exclude reference="Rc5-ad-pId"/>
-                                <exclude reference="hEn-kI-XLO"/>
                                 <exclude reference="0HJ-xj-Zk1"/>
                                 <exclude reference="55q-Da-umm"/>
                                 <exclude reference="h6P-2e-EKE"/>
                                 <exclude reference="afa-7u-q7S"/>
                                 <exclude reference="jSQ-yV-d9N"/>
                                 <exclude reference="usf-iI-qen"/>
+                                <exclude reference="JyR-EO-ICl"/>
+                                <exclude reference="Rc5-ad-pId"/>
+                                <exclude reference="hEn-kI-XLO"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -275,15 +277,15 @@
                                 <include reference="cFC-X3-9R7"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="JyR-EO-ICl"/>
-                                <include reference="Rc5-ad-pId"/>
-                                <include reference="hEn-kI-XLO"/>
                                 <include reference="0HJ-xj-Zk1"/>
                                 <include reference="55q-Da-umm"/>
                                 <include reference="h6P-2e-EKE"/>
                                 <include reference="afa-7u-q7S"/>
                                 <include reference="jSQ-yV-d9N"/>
                                 <include reference="usf-iI-qen"/>
+                                <include reference="JyR-EO-ICl"/>
+                                <include reference="Rc5-ad-pId"/>
+                                <include reference="hEn-kI-XLO"/>
                             </mask>
                         </variation>
                     </view>
@@ -305,6 +307,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Akh-Kf-oxZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1Ws-8R-c0D">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza_cats" translatesAutoresizingMaskIntoConstraints="NO" id="eRS-Hf-cFf">
@@ -370,6 +373,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ydq-dG-h90"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yOq-3I-xYA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza_wayne" translatesAutoresizingMaskIntoConstraints="NO" id="goO-jO-dO3">
@@ -391,13 +395,13 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulc-HX-e22">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.86666666670000003" green="0.29411764709999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Monterey jack gouda cheesecake. Lancashire cottage cheese pecorino airedale queso stinking bishop paneer dolcelatte. Cauliflower cheese cheeseburger cheesecake gouda mozzarella cheesy grin cheese strings macaroni cheese. Brie cheddar say cheese cheese and biscuits mozzarella.
+                                <string key="text">Monterey jack gouda cheesecake. Lancashire cottage cheese pecorino airedale queso stinking bishop paneer dolcelatte. Cauliflower cheese cheeseburger cheesecake gouda mozzarella cheesy grin cheese strings macaroni cheese. Brie cheddar say cheese cheese and biscuits mozzarella.
 
 Boursin port-salut rubber cheese. Stinking bishop dolcelatte port-salut everyone loves port-salut babybel gouda cheddar. Chalk and cheese stinking bishop fondue cauliflower cheese camembert de normandie squirty cheese gouda goat. Feta ricotta stilton cow.
 
 Feta chalk and cheese roquefort. Blue castello stilton camembert de normandie camembert de normandie monterey jack cottage cheese gouda mascarpone. Gouda smelly cheese brie when the cheese comes out everybody's happy emmental halloumi swiss cottage cheese. Squirty cheese port-salut taleggio.
 
-Airedale cheese on toast lancashire. Monterey jack parmesan cheese on toast squirty cheese ricotta halloumi jarlsberg cheese and wine. Cheese strings cheese and wine cream cheese cheesy feet melted cheese feta cheese slices airedale. Ricotta cauliflower cheese brie stinking bishop lancashire roquefort feta everyone loves. Cheese strings cheesy feet caerphilly airedale.</mutableString>
+Airedale cheese on toast lancashire. Monterey jack parmesan cheese on toast squirty cheese ricotta halloumi jarlsberg cheese and wine. Cheese strings cheese and wine cream cheese cheesy feet melted cheese feta cheese slices airedale. Ricotta cauliflower cheese brie stinking bishop lancashire roquefort feta everyone loves. Cheese strings cheesy feet caerphilly airedale.</string>
                                 <color key="textColor" red="0.92794259509999999" green="0.95172427400000004" blue="0.11892150059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -426,14 +430,14 @@ Airedale cheese on toast lancashire. Monterey jack parmesan cheese on toast squi
                                 <exclude reference="Ulc-HX-e22"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="7Mq-rM-6ND"/>
-                                <exclude reference="h2L-cP-kOh"/>
-                                <exclude reference="wUq-Ul-koi"/>
+                                <exclude reference="MQb-ne-9mB"/>
                                 <exclude reference="JMH-TX-uny"/>
                                 <exclude reference="XYh-Rb-hKb"/>
                                 <exclude reference="ahi-LT-00Z"/>
                                 <exclude reference="hNp-Qu-7fn"/>
-                                <exclude reference="MQb-ne-9mB"/>
+                                <exclude reference="7Mq-rM-6ND"/>
+                                <exclude reference="h2L-cP-kOh"/>
+                                <exclude reference="wUq-Ul-koi"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -442,14 +446,14 @@ Airedale cheese on toast lancashire. Monterey jack parmesan cheese on toast squi
                                 <include reference="Ulc-HX-e22"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="7Mq-rM-6ND"/>
-                                <include reference="h2L-cP-kOh"/>
-                                <include reference="wUq-Ul-koi"/>
+                                <include reference="MQb-ne-9mB"/>
                                 <include reference="JMH-TX-uny"/>
                                 <include reference="XYh-Rb-hKb"/>
                                 <include reference="ahi-LT-00Z"/>
                                 <exclude reference="hNp-Qu-7fn"/>
-                                <include reference="MQb-ne-9mB"/>
+                                <include reference="7Mq-rM-6ND"/>
+                                <include reference="h2L-cP-kOh"/>
+                                <include reference="wUq-Ul-koi"/>
                             </mask>
                         </variation>
                     </view>

@@ -290,6 +290,7 @@
 				4DE5FC211D160DD500EFACA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
