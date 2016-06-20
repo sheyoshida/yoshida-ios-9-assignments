@@ -57,8 +57,7 @@
                                         <exclude reference="hZg-I5-0VC"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="40" y="205" width="520" height="45"/>
+                                <variation key="heightClass=regular">
                                     <mask key="constraints">
                                         <include reference="hZg-I5-0VC"/>
                                     </mask>
@@ -402,7 +401,7 @@ Boursin port-salut rubber cheese. Stinking bishop dolcelatte port-salut everyone
 Feta chalk and cheese roquefort. Blue castello stilton camembert de normandie camembert de normandie monterey jack cottage cheese gouda mascarpone. Gouda smelly cheese brie when the cheese comes out everybody's happy emmental halloumi swiss cottage cheese. Squirty cheese port-salut taleggio.
 
 Airedale cheese on toast lancashire. Monterey jack parmesan cheese on toast squirty cheese ricotta halloumi jarlsberg cheese and wine. Cheese strings cheese and wine cream cheese cheesy feet melted cheese feta cheese slices airedale. Ricotta cauliflower cheese brie stinking bishop lancashire roquefort feta everyone loves. Cheese strings cheesy feet caerphilly airedale.</string>
-                                <color key="textColor" red="0.92794259509999999" green="0.95172427400000004" blue="0.11892150059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.84313725490196079" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

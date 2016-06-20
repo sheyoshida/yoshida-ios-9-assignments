@@ -24,14 +24,17 @@ class ViewController: UIViewController {
         buttonSignIn?.layer.cornerRadius = pizzaRadius
         buttonSignIn?.layer.borderWidth = pizzaBorderWidth
         buttonSignIn?.layer.borderColor = pizzaBorderColor
-        
+        buttonSignIn?.layer.backgroundColor = UIColor.pizzaYellow().CGColor
+            
         buttonPizzaNews?.layer.cornerRadius = pizzaRadius
         buttonPizzaNews?.layer.borderWidth = pizzaBorderWidth
         buttonPizzaNews?.layer.borderColor = pizzaBorderColor
+        buttonPizzaNews?.layer.backgroundColor = UIColor.pizzaYellow().CGColor
         
         buttonPizzaGoals?.layer.cornerRadius = pizzaRadius
         buttonPizzaGoals?.layer.borderWidth = pizzaBorderWidth
         buttonPizzaGoals?.layer.borderColor = pizzaBorderColor
+        buttonPizzaGoals?.layer.backgroundColor = UIColor.pizzaYellow().CGColor
         
     }
 

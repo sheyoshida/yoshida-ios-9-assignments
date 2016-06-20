@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D4C3FC11D18A3FF00350674 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C3FC01D18A3FF00350674 /* ColorExtension.swift */; };
 		4DE5FC111D160DD500EFACA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5FC101D160DD500EFACA1 /* AppDelegate.swift */; };
 		4DE5FC131D160DD500EFACA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE5FC121D160DD500EFACA1 /* ViewController.swift */; };
 		4DE5FC161D160DD500EFACA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE5FC141D160DD500EFACA1 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D4C3FC01D18A3FF00350674 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4DE5FC0D1D160DD500EFACA1 /* BioApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE5FC101D160DD500EFACA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DE5FC121D160DD500EFACA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				4DE5FC101D160DD500EFACA1 /* AppDelegate.swift */,
 				4DE5FC121D160DD500EFACA1 /* ViewController.swift */,
+				4D4C3FC01D18A3FF00350674 /* ColorExtension.swift */,
 				4DE5FC141D160DD500EFACA1 /* Main.storyboard */,
 				4DE5FC221D1649E900EFACA1 /* ModalView.storyboard */,
 				4DE5FC171D160DD500EFACA1 /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D4C3FC11D18A3FF00350674 /* ColorExtension.swift in Sources */,
 				4DE5FC131D160DD500EFACA1 /* ViewController.swift in Sources */,
 				4DE5FC111D160DD500EFACA1 /* AppDelegate.swift in Sources */,
 			);
