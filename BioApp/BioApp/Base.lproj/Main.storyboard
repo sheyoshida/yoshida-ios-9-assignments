@@ -31,16 +31,25 @@
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="40" y="104" width="520" height="30"/>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EMAIL" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pwj-kk-ktZ">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="40" y="104" width="520" height="30"/>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yWh-k8-ahd">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="40" y="149" width="520" height="30"/>
+                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oV1-0s-fHT">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -57,7 +66,8 @@
                                         <exclude reference="hZg-I5-0VC"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular">
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="40" y="204" width="520" height="45"/>
                                     <mask key="constraints">
                                         <include reference="hZg-I5-0VC"/>
                                     </mask>
@@ -168,7 +178,8 @@
                                         <exclude reference="5Ye-Es-agP"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular">
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="250"/>
                                     <mask key="constraints">
                                         <include reference="5Ye-Es-agP"/>
                                     </mask>
@@ -193,7 +204,8 @@
                                         <exclude reference="xBq-jk-pNE"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular">
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="30" y="334" width="260" height="45"/>
                                     <mask key="constraints">
                                         <exclude reference="fNv-pH-ezD"/>
                                         <include reference="xBq-jk-pNE"/>
@@ -220,7 +232,8 @@
                                         <exclude reference="pfh-bc-rVq"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular">
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="310" y="334" width="260" height="45"/>
                                     <mask key="constraints">
                                         <exclude reference="J66-pc-TLg"/>
                                         <include reference="pfh-bc-rVq"/>
@@ -321,7 +334,8 @@
                                         <exclude reference="by0-nm-JqW"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular">
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="250"/>
                                     <mask key="constraints">
                                         <include reference="by0-nm-JqW"/>
                                     </mask>
@@ -385,7 +399,8 @@
                                         <exclude reference="8c2-J8-q4X"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular">
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="20" y="64" width="560" height="250"/>
                                     <mask key="constraints">
                                         <include reference="8c2-J8-q4X"/>
                                     </mask>
@@ -404,6 +419,9 @@ Airedale cheese on toast lancashire. Monterey jack parmesan cheese on toast squi
                                 <color key="textColor" red="1" green="0.84313725490196079" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="45" y="314" width="535" height="486"/>
+                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.86666666670000003" green="0.29411764709999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -467,7 +485,7 @@ Airedale cheese on toast lancashire. Monterey jack parmesan cheese on toast squi
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SKu-mx-Bqf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iw6-1Y-MBr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iw6-1Y-MBr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.86666666670000003" green="0.29411764709999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
