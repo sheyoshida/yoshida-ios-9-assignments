@@ -67,19 +67,43 @@
 			isa = PBXGroup;
 			children = (
 				4D5B8DE21D27EFFD00CB3E98 /* AppDelegate.swift */,
-				4D5B8DE41D27EFFD00CB3E98 /* ViewController.swift */,
-				4D5B8DF41D27FD1200CB3E98 /* AgeVerificationModel.swift */,
-				4D5B8DF61D27FD2800CB3E98 /* AgeVerificationViewController.swift */,
-				4D5B8DF81D28098000CB3E98 /* BillSplitterModel.swift */,
-				4D5B8DFA1D28099600CB3E98 /* BillSplitterViewController.swift */,
-				4D5B8DFC1D2809AB00CB3E98 /* GuessNumberModel.swift */,
-				4D5B8DFE1D2809BA00CB3E98 /* GuessNumberViewController.swift */,
-				4D5B8DE61D27EFFD00CB3E98 /* Main.storyboard */,
+				4D5B8E021D28661200CB3E98 /* Model */,
+				4D5B8E031D28663500CB3E98 /* View */,
+				4D5B8E001D2865C100CB3E98 /* Controller */,
 				4D5B8DE91D27EFFD00CB3E98 /* Assets.xcassets */,
 				4D5B8DEB1D27EFFD00CB3E98 /* LaunchScreen.storyboard */,
 				4D5B8DEE1D27EFFD00CB3E98 /* Info.plist */,
 			);
 			path = assignment_two;
+			sourceTree = "<group>";
+		};
+		4D5B8E001D2865C100CB3E98 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B8DE41D27EFFD00CB3E98 /* ViewController.swift */,
+				4D5B8DF61D27FD2800CB3E98 /* AgeVerificationViewController.swift */,
+				4D5B8DFA1D28099600CB3E98 /* BillSplitterViewController.swift */,
+				4D5B8DFE1D2809BA00CB3E98 /* GuessNumberViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4D5B8E021D28661200CB3E98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B8DF41D27FD1200CB3E98 /* AgeVerificationModel.swift */,
+				4D5B8DF81D28098000CB3E98 /* BillSplitterModel.swift */,
+				4D5B8DFC1D2809AB00CB3E98 /* GuessNumberModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4D5B8E031D28663500CB3E98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B8DE61D27EFFD00CB3E98 /* Main.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
