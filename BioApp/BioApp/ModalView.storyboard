@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Modal View-->
         <scene sceneID="VZJ-ew-DZt">
             <objects>
-                <viewController storyboardIdentifier="ModalView" id="jtH-NM-Hwt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModalView" id="jtH-NM-Hwt" customClass="ModalView" customModule="BioApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sdt-OA-u3W"/>
                         <viewControllerLayoutGuide type="bottom" id="iYW-RY-chN"/>
@@ -26,6 +26,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmg-X1-ioa">
                                 <rect key="frame" x="249" y="322" width="102" height="30"/>
                                 <state key="normal" title="Take Me Home"/>
+                                <connections>
+                                    <action selector="homeButtonTapped:" destination="jtH-NM-Hwt" eventType="touchUpInside" id="EKL-G3-1td"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.84313725490196079" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
