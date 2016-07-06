@@ -19,6 +19,8 @@ class BillSplitterViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        amountTextLabel.text = "" 
     }
     
     // MARK: Private
