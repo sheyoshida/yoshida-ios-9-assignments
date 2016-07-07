@@ -1,0 +1,10 @@
+Assignment 2 assessment: Yoshida
+
+Age Verification: Age should be determined by year of birth, not entry of how old you currently are. However, I like the case statement with the ranges.
+
+Bill Calculator: Perfect
+
+Guess Number: Good, maybe have the random only happen once per entry.
+
+Nice organization of code, so tidy :-)
+Great code, complete project!
