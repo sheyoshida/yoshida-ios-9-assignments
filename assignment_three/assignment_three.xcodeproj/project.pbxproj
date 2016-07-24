@@ -14,6 +14,8 @@
 		4D1CA1491D3F1F6900E19856 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1CA1471D3F1F6900E19856 /* LaunchScreen.storyboard */; };
 		4D1CA1511D3F203800E19856 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CA1501D3F203800E19856 /* DetailViewController.swift */; };
 		4D1CA1531D3F221500E19856 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CA1521D3F221500E19856 /* RecipeModel.swift */; };
+		4DCCCB2C1D454176006AA358 /* AddItemViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCCB2B1D454176006AA358 /* AddItemViewController.storyboard */; };
+		4DCCCB2E1D454194006AA358 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCCB2D1D454194006AA358 /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4D1CA14A1D3F1F6900E19856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D1CA1501D3F203800E19856 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4D1CA1521D3F221500E19856 /* RecipeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		4DCCCB2B1D454176006AA358 /* AddItemViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddItemViewController.storyboard; sourceTree = "<group>"; };
+		4DCCCB2D1D454194006AA358 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,9 @@
 				4D1CA1521D3F221500E19856 /* RecipeModel.swift */,
 				4D1CA1401D3F1F6900E19856 /* ViewController.swift */,
 				4D1CA1501D3F203800E19856 /* DetailViewController.swift */,
+				4DCCCB2D1D454194006AA358 /* AddItemViewController.swift */,
 				4D1CA1421D3F1F6900E19856 /* Main.storyboard */,
+				4DCCCB2B1D454176006AA358 /* AddItemViewController.storyboard */,
 				4D1CA1451D3F1F6900E19856 /* Assets.xcassets */,
 				4D1CA1471D3F1F6900E19856 /* LaunchScreen.storyboard */,
 				4D1CA14A1D3F1F6900E19856 /* Info.plist */,
@@ -128,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCCCB2C1D454176006AA358 /* AddItemViewController.storyboard in Resources */,
 				4D1CA1491D3F1F6900E19856 /* LaunchScreen.storyboard in Resources */,
 				4D1CA1461D3F1F6900E19856 /* Assets.xcassets in Resources */,
 				4D1CA1441D3F1F6900E19856 /* Main.storyboard in Resources */,
@@ -141,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCCCB2E1D454194006AA358 /* AddItemViewController.swift in Sources */,
 				4D1CA1511D3F203800E19856 /* DetailViewController.swift in Sources */,
 				4D1CA1531D3F221500E19856 /* RecipeModel.swift in Sources */,
 				4D1CA1411D3F1F6900E19856 /* ViewController.swift in Sources */,

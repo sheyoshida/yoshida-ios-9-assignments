@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Foundation
 
 class DetailViewController: UIViewController {
+    
+    // MARK: Declaration
     
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelDescription: UILabel!
@@ -17,22 +20,20 @@ class DetailViewController: UIViewController {
     
     var recipeItem: Recipe?
     
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        labelTitle.text = recipeItem?.name
-        labelDescription.text = recipeItem?.description
-        
-        if let time = recipeItem?.cookTime {
-            let timeValue = String(time)
-            labelCookTime.text = "Cook time: " + timeValue + " minutes"
+        if let recipe = recipeItem {
+            
+            labelTitle.text = recipe.name
+            labelDescription.text = recipe.description
+            labelCookTime.text = "Cook time: " + String(recipe.cookTime) + " minutes"
+            imageView.image = recipe.image
+            
+            title = recipe.name // add recipe name to nav bar
         }
     }
-    
-    
-    @IBAction func doneButtonTapped(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+
 }

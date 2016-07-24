@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Recipe Book-->
+        <!--Recipes-->
         <scene sceneID="Jr4-58-yuI">
             <objects>
                 <tableViewController id="OOU-Ko-bat" customClass="TableViewController" customModule="assignment_three" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,7 +48,13 @@
                             <outlet property="delegate" destination="OOU-Ko-bat" id="6aM-08-wNc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipe Book" id="5GF-8r-U6c"/>
+                    <navigationItem key="navigationItem" title="Recipes" id="5GF-8r-U6c">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y3j-B4-Kdq">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="OOU-Ko-bat" id="edI-b4-VZu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="znl-e7-Fuw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,44 +72,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN6-1c-09S">
-                                <rect key="frame" x="35" y="94" width="530" height="25.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN6-1c-09S">
+                                <rect key="frame" x="35" y="78" width="530" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPC-5C-mtG">
-                                <rect key="frame" x="35" y="124" width="530" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPC-5C-mtG">
+                                <rect key="frame" x="35" y="108" width="530" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cook Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNg-cV-iAv">
-                                <rect key="frame" x="35" y="165" width="530" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="35" y="143" width="530" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9hj-UC-dEs">
-                                <rect key="frame" x="35" y="188" width="565" height="411.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9hj-UC-dEs">
+                                <rect key="frame" x="35" y="159.5" width="530" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="rOF-Pz-dpG"/>
+                                    <constraint firstAttribute="height" constant="300" id="zaz-oZ-ais"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="zaz-oZ-ais"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XPC-5C-mtG" firstAttribute="leading" secondItem="5ni-DW-JAy" secondAttribute="leadingMargin" constant="15" id="36x-6e-rAZ"/>
-                            <constraint firstItem="XPC-5C-mtG" firstAttribute="top" secondItem="EN6-1c-09S" secondAttribute="bottom" constant="5" id="6SM-Hj-Gyn"/>
-                            <constraint firstItem="EN6-1c-09S" firstAttribute="top" secondItem="hwg-5C-4CA" secondAttribute="bottom" constant="30" id="9d0-kv-QR3"/>
-                            <constraint firstItem="9hj-UC-dEs" firstAttribute="leading" secondItem="5ni-DW-JAy" secondAttribute="leadingMargin" constant="15" id="Jc1-wl-xZ1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WNg-cV-iAv" secondAttribute="trailing" constant="15" id="Jjr-UQ-niJ"/>
-                            <constraint firstItem="WNg-cV-iAv" firstAttribute="leading" secondItem="5ni-DW-JAy" secondAttribute="leadingMargin" constant="15" id="LVW-c7-cya"/>
-                            <constraint firstItem="EN6-1c-09S" firstAttribute="leading" secondItem="5ni-DW-JAy" secondAttribute="leadingMargin" constant="15" id="POh-Wz-Pab"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9hj-UC-dEs" secondAttribute="trailing" constant="-20" id="S8e-w2-P8z"/>
-                            <constraint firstItem="9hj-UC-dEs" firstAttribute="top" secondItem="WNg-cV-iAv" secondAttribute="bottom" constant="5" id="Spc-9i-lcg"/>
-                            <constraint firstItem="s9h-hP-1cG" firstAttribute="top" secondItem="9hj-UC-dEs" secondAttribute="bottom" id="Wki-XA-Y3w"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XPC-5C-mtG" secondAttribute="trailing" constant="15" id="fUk-i4-3W2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EN6-1c-09S" secondAttribute="trailing" constant="15" id="pwY-uS-PqS"/>
-                            <constraint firstItem="WNg-cV-iAv" firstAttribute="top" secondItem="XPC-5C-mtG" secondAttribute="bottom" constant="20" id="vKR-Wj-PB3"/>
+                            <constraint firstItem="EN6-1c-09S" firstAttribute="top" secondItem="WNg-cV-iAv" secondAttribute="bottom" constant="10" id="3nm-Eb-eSc"/>
+                            <constraint firstItem="XPC-5C-mtG" firstAttribute="leading" secondItem="EN6-1c-09S" secondAttribute="leading" id="4mA-07-5iq"/>
+                            <constraint firstItem="9hj-UC-dEs" firstAttribute="width" secondItem="WNg-cV-iAv" secondAttribute="width" id="61k-sz-MSY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EN6-1c-09S" secondAttribute="trailing" constant="15" id="66u-x9-EkI"/>
+                            <constraint firstItem="WNg-cV-iAv" firstAttribute="width" secondItem="XPC-5C-mtG" secondAttribute="width" id="9qh-7Q-pPl"/>
+                            <constraint firstItem="XPC-5C-mtG" firstAttribute="top" secondItem="EN6-1c-09S" secondAttribute="bottom" id="G1c-eG-NuQ"/>
+                            <constraint firstItem="9hj-UC-dEs" firstAttribute="leading" secondItem="WNg-cV-iAv" secondAttribute="leading" id="HLG-0E-Gzc"/>
+                            <constraint firstItem="9hj-UC-dEs" firstAttribute="leading" secondItem="WNg-cV-iAv" secondAttribute="trailing" constant="-533" id="HTB-0J-g11"/>
+                            <constraint firstItem="EN6-1c-09S" firstAttribute="top" secondItem="hwg-5C-4CA" secondAttribute="bottom" constant="14" id="IFm-QQ-l8c"/>
+                            <constraint firstItem="EN6-1c-09S" firstAttribute="leading" secondItem="5ni-DW-JAy" secondAttribute="leadingMargin" constant="15" id="nTo-l2-WZu"/>
+                            <constraint firstItem="XPC-5C-mtG" firstAttribute="width" secondItem="EN6-1c-09S" secondAttribute="width" id="oTz-5m-Vjq"/>
+                            <constraint firstItem="WNg-cV-iAv" firstAttribute="top" secondItem="9hj-UC-dEs" secondAttribute="bottom" constant="-37" id="rMa-8j-koM"/>
+                            <constraint firstItem="WNg-cV-iAv" firstAttribute="top" secondItem="XPC-5C-mtG" secondAttribute="bottom" constant="15" id="uCU-vZ-UAd"/>
+                            <constraint firstItem="WNg-cV-iAv" firstAttribute="leading" secondItem="XPC-5C-mtG" secondAttribute="leading" id="wxb-8s-0NR"/>
+                            <constraint firstItem="9hj-UC-dEs" firstAttribute="top" secondItem="WNg-cV-iAv" secondAttribute="bottom" id="yzt-Oj-d0s"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3nm-Eb-eSc"/>
+                                <exclude reference="rMa-8j-koM"/>
+                                <exclude reference="HTB-0J-g11"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Detail View" id="uqy-9W-3ez"/>
                     <connections>
