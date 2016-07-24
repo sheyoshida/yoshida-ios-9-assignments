@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Add Item View Controller-->
@@ -16,7 +17,50 @@
                     <view key="view" contentMode="scaleToFill" id="MYP-vi-JqN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kjh-Ko-ZOx">
+                                <rect key="frame" x="35" y="125" width="530" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cook Time (in minutes)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9MH-Zg-GtJ" userLabel="Text Field Item Cook Time">
+                                <rect key="frame" x="35" y="205" width="530" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD ITEM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVp-Ds-o4J">
+                                <rect key="frame" x="35" y="84" width="530" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe Description" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mao-Pk-wou" userLabel="Text Field Item Description">
+                                <rect key="frame" x="35" y="165" width="530" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9MH-Zg-GtJ" firstAttribute="top" secondItem="mao-Pk-wou" secondAttribute="bottom" constant="10" id="1gI-Ly-qb3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QVp-Ds-o4J" secondAttribute="trailing" constant="15" id="1yE-vU-VbP"/>
+                            <constraint firstItem="kjh-Ko-ZOx" firstAttribute="top" secondItem="UWb-1R-3ZX" secondAttribute="bottom" constant="30" id="9RU-Fi-vb7"/>
+                            <constraint firstItem="mao-Pk-wou" firstAttribute="top" secondItem="kjh-Ko-ZOx" secondAttribute="bottom" constant="10" id="Jev-5Z-4B1"/>
+                            <constraint firstItem="kjh-Ko-ZOx" firstAttribute="leading" secondItem="MYP-vi-JqN" secondAttribute="leadingMargin" constant="15" id="OTw-dB-Kwa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kjh-Ko-ZOx" secondAttribute="trailing" constant="15" id="SuF-wh-RXG"/>
+                            <constraint firstItem="QVp-Ds-o4J" firstAttribute="top" secondItem="UWb-1R-3ZX" secondAttribute="bottom" constant="20" id="VqL-HZ-1Cy"/>
+                            <constraint firstItem="mao-Pk-wou" firstAttribute="leading" secondItem="MYP-vi-JqN" secondAttribute="leadingMargin" constant="15" id="a3T-1k-vEa"/>
+                            <constraint firstItem="9MH-Zg-GtJ" firstAttribute="leading" secondItem="MYP-vi-JqN" secondAttribute="leadingMargin" constant="15" id="aPZ-A2-EFx"/>
+                            <constraint firstItem="QVp-Ds-o4J" firstAttribute="leading" secondItem="MYP-vi-JqN" secondAttribute="leadingMargin" constant="15" id="ffr-eW-iYy"/>
+                            <constraint firstItem="kjh-Ko-ZOx" firstAttribute="top" secondItem="QVp-Ds-o4J" secondAttribute="bottom" constant="20" id="fzV-nE-i4Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9MH-Zg-GtJ" secondAttribute="trailing" constant="15" id="lvQ-3d-o01"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mao-Pk-wou" secondAttribute="trailing" constant="15" id="zZ6-bb-ZxI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9RU-Fi-vb7"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="pAS-C5-Hy0">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Cfn-Ud-ktH">
@@ -30,6 +74,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textFieldItemCookTime" destination="9MH-Zg-GtJ" id="mMa-AW-r9q"/>
+                        <outlet property="textFieldItemDescription" destination="mao-Pk-wou" id="IBT-UM-VKV"/>
+                        <outlet property="textFieldItemName" destination="kjh-Ko-ZOx" id="L7g-v0-QhW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DmT-0I-pjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
