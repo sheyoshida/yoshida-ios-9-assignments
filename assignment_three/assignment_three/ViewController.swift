@@ -65,7 +65,7 @@ class TableViewController: UITableViewController {
         
         if let addNavigationController = storyboard.instantiateViewControllerWithIdentifier("AddRecipeNavigationStoryboardID") as? UINavigationController,
             let addViewController = addNavigationController.topViewController as? AddItemViewController {
-            addViewController.delegate = self
+            addViewController.delegate = self  // step 3 - set delegate property of vc to self
             presentViewController(addNavigationController, animated: true, completion: {
                 print("success!")
             })
@@ -77,7 +77,7 @@ class TableViewController: UITableViewController {
 
 extension TableViewController: AddViewControllerDelegate {
 
-    func userAddedRecipeItem(item: Recipe) {
+    func userAddedRecipeItem(item: Recipe) { // step 4 - conform to the protocol 
         recipeBook.append(item)
         tableView.reloadData()
     }

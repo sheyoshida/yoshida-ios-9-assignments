@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: Delegate Protocol
 
-protocol AddViewControllerDelegate {
+protocol AddViewControllerDelegate { // step 1 - make a delegate protocol
     func userAddedRecipeItem(item: Recipe)
 }
 
@@ -21,7 +21,7 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var textFieldItemDescription: UITextField!
     @IBOutlet weak var textFieldItemCookTime: UITextField!
     
-    var delegate: AddViewControllerDelegate?
+    var delegate: AddViewControllerDelegate? // step 2 - declare a delegate property of the protocol type
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class AddItemViewController: UIViewController {
                 return
         }
         
-        // TODO: add way to populate individual entry items for ingredients, steps and add camera for image. 
+        // TODO: add way to populate individual entry items for ingredients, steps and add camera functionality for image. 
         
         let newRecipe = Recipe(name: name, cookTime: time, description: description, ingredients: [], steps: [], image: UIImage(named: "placeholder")!)
         
