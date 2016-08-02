@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Add Item View Controller-->
+        <scene sceneID="nfc-Mq-x9P">
+            <objects>
+                <viewController id="Xtl-cA-qLN" customClass="AddItemViewController" customModule="register" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IEQ-O4-Pd2"/>
+                        <viewControllerLayoutGuide type="bottom" id="VtX-jW-DPA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yZy-qU-Oi8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ITEM TITLE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqh-d3-9R8">
+                                <rect key="frame" x="16" y="80" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ITEM PRICE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oQu-Z6-Zky">
+                                <rect key="frame" x="16" y="126" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRy-Mk-sv7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="ADD ITEM" id="QSF-Md-b42">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dUV-up-YEI"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8H5-AH-Xz2"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eqh-d3-9R8" firstAttribute="top" secondItem="IEQ-O4-Pd2" secondAttribute="bottom" constant="16" id="DLX-SB-pBL"/>
+                            <constraint firstItem="oQu-Z6-Zky" firstAttribute="leading" secondItem="eqh-d3-9R8" secondAttribute="leading" id="d1f-jf-cIN"/>
+                            <constraint firstAttribute="trailing" secondItem="eqh-d3-9R8" secondAttribute="trailing" constant="16" id="hOh-DR-eHn"/>
+                            <constraint firstItem="oQu-Z6-Zky" firstAttribute="width" secondItem="eqh-d3-9R8" secondAttribute="width" id="hfH-DC-LvT"/>
+                            <constraint firstItem="eqh-d3-9R8" firstAttribute="leading" secondItem="yZy-qU-Oi8" secondAttribute="leading" constant="16" id="rak-hp-2T9"/>
+                            <constraint firstItem="oQu-Z6-Zky" firstAttribute="top" secondItem="eqh-d3-9R8" secondAttribute="bottom" constant="16" id="w3U-Gd-9Pq"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jxJ-NU-J91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2412" y="-347"/>
+        </scene>
+    </scenes>
+</document>
