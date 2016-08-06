@@ -19,6 +19,7 @@ class MenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView?.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -36,6 +37,7 @@ class MenuTableViewController: UITableViewController {
             addViewController.delegate = self
             presentViewController(addNavigationController, animated: true, completion: {
                 self.totalPrice = 0.0
+                self.tableView.tableFooterView?.hidden = false
             })
         }
     }
@@ -43,13 +45,14 @@ class MenuTableViewController: UITableViewController {
     @IBAction func clearButtonTapped(sender: AnyObject) {
         shoppingCart.removeAll()
         totalPrice = 0.0
+        self.tableView.tableFooterView?.hidden = true
         tableView.reloadData()
     }
     
     // MARK: Table View Data Source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shoppingCart.count
+            return shoppingCart.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
