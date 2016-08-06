@@ -9,56 +9,80 @@
 import UIKit
 
 class MenuTableViewController: UITableViewController {
-
+    
     // MARK: Declaration
     
     var shoppingCart = [Item]()
-    
-
-    
-    let cellIdentifier = "CellIdentifier"
+    var totalPrice: Float = 0.0
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let items = [
-        Item(name: "Pepperoni Pizza", price: 10.99, image: UIImage(named: "pizza")!),
-        Item(name: "Cheeseburger", price: 7.99, image: UIImage(named: "cheeseburger")!),
-        Item(name: "Beefy Lasagna", price: 8.99, image: UIImage(named: "lasagna")!),
-        Item(name: "Iceburg Salad", price: 4.99, image: UIImage(named: "salad")!),
-        Item(name: "Chocolate Sundae", price: 5.99, image: UIImage(named: "sundae")!)
-        ]
-        
-        shoppingCart.appendContentsOf(items)
-        
     }
     
-    // MARK: Data Source
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shoppingCart.count
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
     }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    // MARK: Actions
+    
+    @IBAction func addButtonTapped(sender: AnyObject) {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-        let itemChosen = shoppingCart[indexPath.row]
+        let storyboard = UIStoryboard(name: "AddItemStoryboard", bundle: nil)
         
-        cell.detailTextLabel?.text = "price: $" + String(itemChosen.price)
-        cell.textLabel?.text = itemChosen.name
-        cell.imageView?.image = itemChosen.image 
-        
-        
-        return cell
+        if let addNavigationController = storyboard.instantiateViewControllerWithIdentifier("AddItemNavID") as? UINavigationController, let addViewController = addNavigationController.topViewController as? MenuViewController
+        {
+            addViewController.delegate = self
+            presentViewController(addNavigationController, animated: true, completion: {
+                self.totalPrice = 0.0
+            })
+        }
     }
     
     @IBAction func clearButtonTapped(sender: AnyObject) {
         shoppingCart.removeAll()
+        totalPrice = 0.0
         tableView.reloadData()
     }
     
+    // MARK: Table View Data Source
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return shoppingCart.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
+        let itemChosen = shoppingCart[indexPath.row]
+        
+        cell.detailTextLabel?.text = "price: $" + String(itemChosen.price)
+        cell.textLabel?.text = itemChosen.name
+        cell.imageView?.image = itemChosen.image
+        
+        // add up items and store in variable
+        totalPrice += itemChosen.price
+        
+        return cell
+    }
+    
+    // MARK: Segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let detailViewController = segue.destinationViewController as? CheckoutViewController {
+            let itemCount = shoppingCart.count
+            detailViewController.itemCount = itemCount
+            detailViewController.itemTotalPrice = totalPrice
+        }
+    }
+}
 
+extension MenuTableViewController: AddItemDelegate {
+    func userAddedItem(item: Item) {
+        shoppingCart.append(item)
+        tableView.reloadData()
+    }
 }
 

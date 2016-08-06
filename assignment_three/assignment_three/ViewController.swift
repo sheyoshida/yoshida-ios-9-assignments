@@ -19,13 +19,13 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let items = [
-            Recipe(name: "Red Velvet Cupcakes", cookTime: 30, description: "Chocolate cake with cream cheese icing.", ingredients: ["chocolate", "flour", "butter", "cream cheese for frosting"], steps: ["preheat oven to 350", "combine dry ingredients", "combine wet ingredietns", "add dry to wet ingredients and mix until just combined", "bake for 15 minutes"], image: UIImage(named: "cupcake")!),
-            
-            Recipe(name: "Bananna Split", cookTime: 5, description: "That classic ice cream treat.", ingredients: ["vanialla ice cream", "bananna", "whipped cream", "cherry"], steps: ["assemble ice cream and bananna in bowl", "top with whipped cream and cherry"], image: UIImage(named: "banana-split")!)
-        ]
-        
-        recipeBook.appendContentsOf(items)
+//        let items = [
+//            Recipe(name: "Red Velvet Cupcakes", cookTime: 30, description: "Chocolate cake with cream cheese icing.", ingredients: ["chocolate", "flour", "butter", "cream cheese for frosting"], steps: ["preheat oven to 350", "combine dry ingredients", "combine wet ingredietns", "add dry to wet ingredients and mix until just combined", "bake for 15 minutes"], image: UIImage(named: "cupcake")!),
+//            
+//            Recipe(name: "Bananna Split", cookTime: 5, description: "That classic ice cream treat.", ingredients: ["vanialla ice cream", "bananna", "whipped cream", "cherry"], steps: ["assemble ice cream and bananna in bowl", "top with whipped cream and cherry"], image: UIImage(named: "banana-split")!)
+//        ]
+//        
+//        recipeBook.appendContentsOf(items)
     }
     
     // MARK: Data Source
@@ -60,7 +60,7 @@ class TableViewController: UITableViewController {
     
     @IBAction func addButtonTapped(sender: AnyObject) {
         // AddRecipeNavigationStoryboardID
-        
+                
         let storyboard = UIStoryboard(name: "AddItemViewController", bundle: nil)
         
         if let addNavigationController = storyboard.instantiateViewControllerWithIdentifier("AddRecipeNavigationStoryboardID") as? UINavigationController,

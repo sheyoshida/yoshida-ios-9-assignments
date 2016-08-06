@@ -99,9 +99,9 @@
 			children = (
 				4D729BDC1D500A5D00C2E6FB /* TableViewController.swift */,
 				4D729BEE1D5018EC00C2E6FB /* MenuViewController.swift */,
-				4D729BF01D50190F00C2E6FB /* AddItemViewController.swift */,
 				4D729BF21D50193900C2E6FB /* CheckoutViewController.swift */,
 				4D729BF41D50195700C2E6FB /* ChangeDueViewController.swift */,
+				4D729BF01D50190F00C2E6FB /* AddItemViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -334,6 +334,7 @@
 				4D729BEB1D500A5D00C2E6FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
