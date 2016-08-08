@@ -90,25 +90,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LIB-gp-776">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LIB-gp-776">
                                 <rect key="frame" x="300" y="64" width="300" height="492"/>
                                 <subviews>
-                                    <button opaque="NO" alpha="0.75" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICc-jv-jVe">
+                                    <button opaque="NO" alpha="0.75" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICc-jv-jVe">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="164"/>
                                         <color key="backgroundColor" red="1" green="0.92187888559999998" blue="0.91346235180000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="2" image="pizza"/>
+                                        <state key="normal" image="pizza"/>
                                         <connections>
                                             <action selector="pizzaButtonTapped:" destination="kqb-Ng-iJt" eventType="touchUpInside" id="lJz-Zd-8bU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.75" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78R-R3-9UD">
+                                    <button opaque="NO" alpha="0.75" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78R-R3-9UD">
                                         <rect key="frame" x="0.0" y="164" width="300" height="164"/>
-                                        <state key="normal" title="4" image="lasagna"/>
+                                        <state key="normal" image="lasagna"/>
                                         <connections>
                                             <action selector="lasagnaButtonTapped:" destination="kqb-Ng-iJt" eventType="touchUpInside" id="X9b-WV-cVw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMt-iA-w2j">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMt-iA-w2j">
                                         <rect key="frame" x="0.0" y="328" width="300" height="164"/>
                                         <color key="backgroundColor" red="1" green="0.92187888559999998" blue="0.91346235180000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
@@ -122,27 +122,27 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="odR-5n-I4c">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="odR-5n-I4c">
                                 <rect key="frame" x="0.0" y="64" width="300" height="492"/>
                                 <subviews>
-                                    <button opaque="NO" alpha="0.75" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwd-PV-o3G">
+                                    <button opaque="NO" alpha="0.75" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwd-PV-o3G">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="164"/>
-                                        <state key="normal" title="1" image="cheeseburger"/>
+                                        <state key="normal" image="cheeseburger"/>
                                         <connections>
                                             <action selector="cheeseburbuttonTapped:" destination="kqb-Ng-iJt" eventType="touchUpInside" id="xSi-rA-tdh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.75" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtG-tl-JB7">
+                                    <button opaque="NO" alpha="0.75" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtG-tl-JB7">
                                         <rect key="frame" x="0.0" y="164" width="300" height="164"/>
                                         <color key="backgroundColor" red="1" green="0.92187888559999998" blue="0.91346235180000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="3" image="salad"/>
+                                        <state key="normal" image="salad"/>
                                         <connections>
                                             <action selector="saladButtonTapped:" destination="kqb-Ng-iJt" eventType="touchUpInside" id="mGw-rE-WvG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.75" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ik-1I-0BK">
+                                    <button opaque="NO" alpha="0.75" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ik-1I-0BK">
                                         <rect key="frame" x="0.0" y="328" width="300" height="164"/>
-                                        <state key="normal" title="5" image="sundae"/>
+                                        <state key="normal" image="sundae"/>
                                         <connections>
                                             <action selector="sundaeButtonTapped:" destination="kqb-Ng-iJt" eventType="touchUpInside" id="ahJ-5n-me5"/>
                                         </connections>
