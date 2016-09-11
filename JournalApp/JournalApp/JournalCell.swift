@@ -14,13 +14,24 @@ class JournalCell: UITableViewCell {
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var imageViewArtwork: UIImageView!
     
+    @IBOutlet weak var imageStarOne: UIImageView!
+    @IBOutlet weak var imageStarTwo: UIImageView!
+    @IBOutlet weak var imageStarThree: UIImageView!
+    @IBOutlet weak var imageStarFour: UIImageView!
+    @IBOutlet weak var imageStarFive: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        imageStarOne.image = UIImage(named: "star_unselected")
+        imageStarTwo.image = UIImage(named: "star_unselected")
+        imageStarThree.image = UIImage(named: "star_unselected")
+        imageStarFour.image = UIImage(named: "star_unselected")
+        imageStarFive.image = UIImage(named: "star_unselected")
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
 }

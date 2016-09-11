@@ -66,7 +66,7 @@ class DetailViewController: UIViewController {
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.LongStyle
         let dateString = formatter.stringFromDate(dateText)
-        labelDate.text = "Added On: " + dateString
+        labelDate.text = "Added: " + dateString
     }
     
     // text view begins at top

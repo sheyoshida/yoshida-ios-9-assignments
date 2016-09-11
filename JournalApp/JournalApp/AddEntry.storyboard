@@ -70,13 +70,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oJ-Z4-Rjl">
                                                     <rect key="frame" x="15" y="13" width="570" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Detail: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywo-3N-xNf">
                                                     <rect key="frame" x="15" y="34" width="570" height="60.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -159,19 +159,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJS-Jd-T6n">
-                                <rect key="frame" x="15" y="74" width="570" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="15" y="84" width="570" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUO-yT-0Ts">
-                                <rect key="frame" x="15" y="100" width="570" height="21"/>
+                                <rect key="frame" x="15" y="108" width="570" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Kk-ED-FFD">
-                                <rect key="frame" x="15" y="131" width="570" height="65"/>
+                                <rect key="frame" x="15" y="139" width="570" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muf-dC-aKz">
                                         <rect key="frame" x="0.0" y="0.0" width="114" height="65"/>
@@ -220,7 +220,10 @@
                                     <constraint firstAttribute="height" constant="50" id="GCh-Sk-vUh"/>
                                     <constraint firstAttribute="width" constant="200" id="dji-X2-32f"/>
                                 </constraints>
-                                <state key="normal" title="ADD ENTRY"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="ADD ENTRY">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="addEntryButtonTapped:" destination="fMi-5M-APD" eventType="touchUpInside" id="zS4-Dj-MRQ"/>
                                 </connections>
@@ -229,9 +232,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="HJS-Jd-T6n" secondAttribute="trailing" constant="15" id="3ho-1x-LaJ"/>
-                            <constraint firstItem="HJS-Jd-T6n" firstAttribute="top" secondItem="BJA-xW-W9S" secondAttribute="bottom" constant="10" id="7g3-gl-dJ9"/>
+                            <constraint firstItem="HJS-Jd-T6n" firstAttribute="top" secondItem="BJA-xW-W9S" secondAttribute="bottom" constant="20" id="7g3-gl-dJ9"/>
                             <constraint firstAttribute="trailing" secondItem="7Kk-ED-FFD" secondAttribute="trailing" constant="15" id="7w8-fk-KgR"/>
-                            <constraint firstItem="iUO-yT-0Ts" firstAttribute="top" secondItem="HJS-Jd-T6n" secondAttribute="bottom" constant="5" id="8ef-mR-k10"/>
+                            <constraint firstItem="iUO-yT-0Ts" firstAttribute="top" secondItem="HJS-Jd-T6n" secondAttribute="bottom" id="8ef-mR-k10"/>
                             <constraint firstItem="HJS-Jd-T6n" firstAttribute="leading" secondItem="ANw-vS-1Qe" secondAttribute="leading" constant="15" id="HY0-Rc-dY2"/>
                             <constraint firstItem="cee-fy-Igo" firstAttribute="centerX" secondItem="ANw-vS-1Qe" secondAttribute="centerX" id="T3C-LD-MBd"/>
                             <constraint firstItem="cee-fy-Igo" firstAttribute="centerY" secondItem="ANw-vS-1Qe" secondAttribute="centerY" id="WmB-XR-aP3"/>

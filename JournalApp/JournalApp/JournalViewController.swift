@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.rowHeight = UITableViewAutomaticDimension // cell height matches text
-        tableView.estimatedRowHeight = 105
+        tableView.estimatedRowHeight = 161
         tableView.tableFooterView = UIView() // hide empty views
 
     }
@@ -65,18 +65,50 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.labelTitle?.text = reviewedItem.title + " (" + String(reviewedItem.yearMade) + ")"
         cell.labelDetail?.text = reviewedItem.name
         
-        // show rating too? 
+        // TODO: - make switch statements
         
+        //  set images for each cell
         if reviewedItem.type == "Book" {
-            cell.imageView?.image = UIImage(named: "book_unselected.png")
+            cell.imageView?.image = UIImage(named: "book_unselected")
         }
         if reviewedItem.type == "Album" {
-            cell.imageView?.image = UIImage(named: "album_unselected.png")
+            cell.imageView?.image = UIImage(named: "album_unselected")
         }
         if reviewedItem.type == "Film" {
-            cell.imageView?.image = UIImage(named: "movie_unselected.png")
+            cell.imageView?.image = UIImage(named: "movie_unselected")
         }
         
+        // set star rating images
+        if reviewedItem.rating == 1 {
+            cell.imageStarOne?.image = UIImage(named: "star_selected")
+        }
+        if reviewedItem.rating == 2 {
+            cell.imageStarOne?.image = UIImage(named: "star_selected")
+            cell.imageStarTwo?.image = UIImage(named: "star_selected")
+        }
+        if reviewedItem.rating == 3 {
+            cell.imageStarOne?.image = UIImage(named: "star_selected")
+            cell.imageStarTwo?.image = UIImage(named: "star_selected")
+            cell.imageStarThree?.image = UIImage(named: "star_selected")
+        }
+        if reviewedItem.rating == 4 {
+            cell.imageStarOne?.image = UIImage(named: "star_selected")
+            cell.imageStarTwo?.image = UIImage(named: "star_selected")
+            cell.imageStarThree?.image = UIImage(named: "star_selected")
+            cell.imageStarFour?.image = UIImage(named: "star_selected")
+        }
+        if reviewedItem.rating == 5 {
+            cell.imageStarOne?.image = UIImage(named: "star_selected")
+            cell.imageStarTwo?.image = UIImage(named: "star_selected")
+            cell.imageStarThree?.image = UIImage(named: "star_selected")
+            cell.imageStarFour?.image = UIImage(named: "star_selected")
+            cell.imageStarFive?.image = UIImage(named: "star_selected")
+        }
+        
+        // stretch separator across entire view
+        cell.preservesSuperviewLayoutMargins = false
+        cell.layoutMargins = UIEdgeInsetsZero
+
         return cell
     }
     
