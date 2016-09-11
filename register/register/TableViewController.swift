@@ -34,8 +34,7 @@ class MenuTableViewController: UITableViewController {
         
         if let addNavigationController = storyboard.instantiateViewControllerWithIdentifier("AddItemNavID") as? UINavigationController, let addViewController = addNavigationController.topViewController as? MenuViewController
         {
-            addViewController.delegate = self
-            presentViewController(addNavigationController, animated: true, completion: {
+             presentViewController(addNavigationController, animated: true, completion: {
                 self.totalPrice = 0.0
                 self.tableView.tableFooterView?.hidden = false
             })
