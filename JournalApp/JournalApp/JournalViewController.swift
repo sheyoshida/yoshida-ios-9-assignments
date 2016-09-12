@@ -21,6 +21,9 @@ class ViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension // cell height matches text
         tableView.estimatedRowHeight = 161
         tableView.tableFooterView = UIView() // hide empty views
+        
+        
+
 
     }
     

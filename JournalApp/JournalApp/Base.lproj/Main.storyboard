@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Media Journal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,22 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9aA-It-XQd">
-                                <rect key="frame" x="15" y="69" width="570" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="161" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9pi-nr-QLc">
-                                <rect key="frame" x="0.0" y="102" width="600" height="498"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="gdK-AI-D3k"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="161" id="GfV-yk-7tV" customClass="JournalCell" customModule="JournalApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="161"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="161"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GfV-yk-7tV" id="AoN-Ao-cVp">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="160.5"/>
@@ -60,13 +53,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JUi-J8-CmP">
-                                                    <rect key="frame" x="93" y="117.5" width="407" height="30"/>
+                                                    <rect key="frame" x="93" y="117" width="407" height="30"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gTx-Or-9NM">
                                                             <rect key="frame" x="0.0" y="0.0" width="81.5" height="30"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t6m-e4-SBC">
-                                                            <rect key="frame" x="81.5" y="0.0" width="81.5" height="30"/>
+                                                            <rect key="frame" x="81" y="0.0" width="81.5" height="30"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZA-l0-esl">
                                                             <rect key="frame" x="163" y="0.0" width="81" height="30"/>
@@ -75,7 +68,7 @@
                                                             <rect key="frame" x="244" y="0.0" width="81.5" height="30"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o41-L8-lwd">
-                                                            <rect key="frame" x="325.5" y="0.0" width="81.5" height="30"/>
+                                                            <rect key="frame" x="325" y="0.0" width="81.5" height="30"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
@@ -141,16 +134,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9aA-It-XQd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="0Xh-xa-Uy1"/>
-                            <constraint firstItem="9pi-nr-QLc" firstAttribute="top" secondItem="9aA-It-XQd" secondAttribute="bottom" constant="5" id="Gao-wp-baE"/>
+                            <constraint firstItem="9pi-nr-QLc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ip7-jv-1vE"/>
                             <constraint firstAttribute="trailing" secondItem="9pi-nr-QLc" secondAttribute="trailing" id="OCn-wL-KUM"/>
                             <constraint firstItem="9pi-nr-QLc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="S1i-TG-Yu0"/>
-                            <constraint firstItem="9aA-It-XQd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="Sza-u9-lcE"/>
-                            <constraint firstAttribute="trailing" secondItem="9aA-It-XQd" secondAttribute="trailing" constant="15" id="g01-LG-xU4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9pi-nr-QLc" secondAttribute="bottom" id="zC1-H0-6DX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="twz-fs-iS5">
+                    <navigationItem key="navigationItem" title="Media Journal" id="twz-fs-iS5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NER-2H-wNA">
                             <connections>
                                 <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="loh-Fo-53U"/>

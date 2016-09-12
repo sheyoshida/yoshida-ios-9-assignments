@@ -28,6 +28,7 @@ class JournalCell: UITableViewCell {
         imageStarThree.image = UIImage(named: "star_unselected")
         imageStarFour.image = UIImage(named: "star_unselected")
         imageStarFive.image = UIImage(named: "star_unselected")
+
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
