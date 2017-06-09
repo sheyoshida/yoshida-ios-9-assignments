@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PassItemDelegate {
-    func passItemToRootView(item: JournalEntry)
+    func passItemToRootView(_ item: JournalEntry)
 }
 
 class SearchEntryViewController: UIViewController {
@@ -42,32 +42,32 @@ class SearchEntryViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func albumButtonTapped(sender: AnyObject) {
+    @IBAction func albumButtonTapped(_ sender: AnyObject) {
         saveChoice("Album")
         albumSearchDefaults()
         clearTableViewIfFull()
     }
     
-    @IBAction func bookButtonTapped(sender: AnyObject) {
+    @IBAction func bookButtonTapped(_ sender: AnyObject) {
         saveChoice("Book")
         bookSearchDefaults()
         clearTableViewIfFull()
     }
     
-    @IBAction func filmButtonTapped(sender: AnyObject) {
+    @IBAction func filmButtonTapped(_ sender: AnyObject) {
         saveChoice("Film")
         filmSearchDefaults()
         clearTableViewIfFull()
     }
     
-    @IBAction func cancelButtonTapped(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelButtonTapped(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK - NSUserDefaults
     
-    func saveChoice(mediaPickType: String) {
-        NSUserDefaults.standardUserDefaults().setObject(mediaPickType, forKey: "last used")
+    func saveChoice(_ mediaPickType: String) {
+        UserDefaults.standard.set(mediaPickType, forKey: "last used")
     }
     
     // MARK: - Button Logic
@@ -76,31 +76,31 @@ class SearchEntryViewController: UIViewController {
         searchMediaType = "musicArtist"
         mediaType = "Album"
         navigationItem.title = "Search For Album"
-        buttonAlbum.setImage(UIImage(named: "album_selected"), forState: UIControlState.Normal)
-        buttonBook.setImage(UIImage(named: "book_unselected"), forState: UIControlState.Normal)
-        buttonFilm.setImage(UIImage(named: "movie_unselected"), forState: UIControlState.Normal)
+        buttonAlbum.setImage(UIImage(named: "album_selected"), for: UIControlState())
+        buttonBook.setImage(UIImage(named: "book_unselected"), for: UIControlState())
+        buttonFilm.setImage(UIImage(named: "movie_unselected"), for: UIControlState())
     }
     
     func bookSearchDefaults() {
         searchMediaType = "ebook"
         mediaType = "Book"
         navigationItem.title = "Search For Book"
-        buttonAlbum.setImage(UIImage(named: "album_unselected"), forState: UIControlState.Normal)
-        buttonBook.setImage(UIImage(named: "book_selected"), forState: UIControlState.Normal)
-        buttonFilm.setImage(UIImage(named: "movie_unselected"), forState: UIControlState.Normal)
+        buttonAlbum.setImage(UIImage(named: "album_unselected"), for: UIControlState())
+        buttonBook.setImage(UIImage(named: "book_selected"), for: UIControlState())
+        buttonFilm.setImage(UIImage(named: "movie_unselected"), for: UIControlState())
     }
     
     func filmSearchDefaults() {
         searchMediaType = "movie"
         mediaType = "Film"
         navigationItem.title = "Search For Film"
-        buttonAlbum.setImage(UIImage(named: "album_unselected"), forState: UIControlState.Normal)
-        buttonBook.setImage(UIImage(named: "book_unselected"), forState: UIControlState.Normal)
-        buttonFilm.setImage(UIImage(named: "movie_selected"), forState: UIControlState.Normal)
+        buttonAlbum.setImage(UIImage(named: "album_unselected"), for: UIControlState())
+        buttonBook.setImage(UIImage(named: "book_unselected"), for: UIControlState())
+        buttonFilm.setImage(UIImage(named: "movie_selected"), for: UIControlState())
     }
     
     func setupButtons() {
-        let choice = NSUserDefaults.standardUserDefaults().objectForKey("last used") as? String
+        let choice = UserDefaults.standard.object(forKey: "last used") as? String
         if let pick = choice { // unwrap it
             if pick == "Album" {
                 albumSearchDefaults()
@@ -126,9 +126,9 @@ class SearchEntryViewController: UIViewController {
     
     // MARK: - Navigation
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addEntryIdentifier" {
-            if let detailViewController = segue.destinationViewController as? AddEntryViewController {
+            if let detailViewController = segue.destination as? AddEntryViewController {
                 detailViewController.delegate = self
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let itemToReview = journalItems[indexPath.row]
@@ -144,18 +144,18 @@ class SearchEntryViewController: UIViewController {
 
 extension SearchEntryViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return journalItems.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tableViewCellIdentifier", forIndexPath: indexPath) as! SearchTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCellIdentifier", for: indexPath) as! SearchTableViewCell
         
         let result = journalItems[indexPath.row]
         let convertedDate = String(result.yearMade)
         
         cell.labelTitle?.text = result.title
-        cell.labelDetail?.text = result.name.stringByAppendingString(" (").stringByAppendingString(convertedDate).stringByAppendingString(")")
+        cell.labelDetail?.text = ((result.name + " (") + convertedDate) + ")"
         
         return cell
     }
@@ -166,12 +166,12 @@ extension SearchEntryViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension SearchEntryViewController: UITextFieldDelegate {
     
-    @IBAction func textFieldTextAdded(sender: AnyObject) {
+    @IBAction func textFieldTextAdded(_ sender: AnyObject) {
 
         if let searchItem = textField.text {
             
             // remove spaces and additional characters for url
-            let safeURL = searchItem.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+            let safeURL = searchItem.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
             
             if mediaType == "Album" {
                 url =  "https://itunes.apple.com/search?media=music&entity=album&term=\(safeURL)&limit=20"
@@ -180,10 +180,10 @@ extension SearchEntryViewController: UITextFieldDelegate {
             }
             
             // convert string to url
-            if  let webURL = NSURL(string: url) {
+            if  let webURL = URL(string: url) {
                 print("web url: \(webURL)")
                 
-                let dataTask = NSURLSession.sharedSession().dataTaskWithURL(webURL) { (iTunesData, response, error) in
+                let dataTask = URLSession.shared.dataTask(with: webURL, completionHandler: { (iTunesData, response, error) in
                     
                     if let error = error {
                         print("error: \(error.localizedDescription).")
@@ -196,7 +196,7 @@ extension SearchEntryViewController: UITextFieldDelegate {
                     }
                     
                     do {
-                        if let object = try NSJSONSerialization.JSONObjectWithData(iTunesData, options: .AllowFragments) as? [String: AnyObject] {
+                        if let object = try JSONSerialization.jsonObject(with: iTunesData, options: .allowFragments) as? [String: AnyObject] {
 //                            print("\(object)")
 //                            print("\(object["results"]![0]["amgArtistId"])")
 
@@ -213,7 +213,7 @@ extension SearchEntryViewController: UITextFieldDelegate {
                                             if let description = artist["longDescription"],
                                                 let title = artist["trackName"] {
                                                 
-                                                self.itemsFromAPI = JournalEntry(name: "Director: " + (name as! String), title: title as! String, type: self.mediaType, rating: 3, note: description as! String, image: image as! String, yearMade: year.integerValue)
+                                                self.itemsFromAPI = JournalEntry(name: "Director: " + (name as! String), title: title as! String, type: self.mediaType, rating: 3, note: description as! String, image: image as! String, yearMade: year.intValue)
                                                 
                                                 print("FILM DETAILS: director: \(self.itemsFromAPI!.name), type: \(self.itemsFromAPI!.type), year: \(self.itemsFromAPI!.yearMade), description: \(self.itemsFromAPI!.note), title: \(self.itemsFromAPI!.title)")
                                             }
@@ -223,13 +223,13 @@ extension SearchEntryViewController: UITextFieldDelegate {
                                             if let title = artist["trackName"],
                                                 let description = artist["description"] {
                                                 
-                                                self.itemsFromAPI = JournalEntry(name: "Author: " + (name as! String), title: title as! String, type: self.mediaType, rating: 0, note: description as! String, image: image as! String, yearMade: year.integerValue)
+                                                self.itemsFromAPI = JournalEntry(name: "Author: " + (name as! String), title: title as! String, type: self.mediaType, rating: 0, note: description as! String, image: image as! String, yearMade: year.intValue)
                                             }
                                         }
                                         
                                         if self.mediaType == "Album" {
                                             if let album = artist["collectionName"] {
-                                                self.itemsFromAPI = JournalEntry(name: "Artist: " + (name as! String), title: album as! String, type: self.mediaType, rating: 0, note: "", image: image as! String, yearMade: year.integerValue)
+                                                self.itemsFromAPI = JournalEntry(name: "Artist: " + (name as! String), title: album as! String, type: self.mediaType, rating: 0, note: "", image: image as! String, yearMade: year.intValue)
                                             }
                                         }
                                         // append search results to array for TBV
@@ -241,11 +241,11 @@ extension SearchEntryViewController: UITextFieldDelegate {
                     } catch {
                         // handle error
                     }
-                    dispatch_async(dispatch_get_main_queue(), {
+                    DispatchQueue.main.async(execute: {
                         self.tableView.reloadData()
                         // do other things here, load images if necessary
                     })
-                }
+                }) 
                 dataTask.resume() // don't forget this
                 
                 // NOTE: for non HTTPS urls, an app transport security warning message may pop up in the console... we need to allow HTTP connections in the plist -> App Transport Security Settings, Allow Aribitrary Loads.
@@ -254,12 +254,12 @@ extension SearchEntryViewController: UITextFieldDelegate {
         
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textFieldShouldClear(textField: UITextField) -> Bool {
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
         journalItems.removeAll()
         tableView.reloadData()
         return true
@@ -267,7 +267,7 @@ extension SearchEntryViewController: UITextFieldDelegate {
 }
 
 extension SearchEntryViewController: AddItemDelegate {
-    func userAddedItem(item: JournalEntry) {
+    func userAddedItem(_ item: JournalEntry) {
        delegatePassItem?.passItemToRootView(item)
         print("\(item)")
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddItemDelegate {
-    func userAddedItem(item: JournalEntry)
+    func userAddedItem(_ item: JournalEntry)
 }
 
 class AddEntryViewController: UIViewController {
@@ -60,59 +60,59 @@ class AddEntryViewController: UIViewController {
     }
 
     
-    @IBAction func oneStarTapped(sender: AnyObject) {
+    @IBAction func oneStarTapped(_ sender: AnyObject) {
         rating = 1
-        buttonOne.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonTwo.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
-        buttonThree.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
-        buttonFour.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
-        buttonFive.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
+        buttonOne.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonTwo.setImage(UIImage(named: "star_unselected"), for: UIControlState())
+        buttonThree.setImage(UIImage(named: "star_unselected"), for: UIControlState())
+        buttonFour.setImage(UIImage(named: "star_unselected"), for: UIControlState())
+        buttonFive.setImage(UIImage(named: "star_unselected"), for: UIControlState())
     }
-    @IBAction func twoStarTapped(sender: AnyObject) {
+    @IBAction func twoStarTapped(_ sender: AnyObject) {
         rating = 2
-        buttonOne.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonTwo.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonThree.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
-        buttonFour.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
-        buttonFive.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
+        buttonOne.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonTwo.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonThree.setImage(UIImage(named: "star_unselected"), for: UIControlState())
+        buttonFour.setImage(UIImage(named: "star_unselected"), for: UIControlState())
+        buttonFive.setImage(UIImage(named: "star_unselected"), for: UIControlState())
     }
     
-    @IBAction func threeStarTapped(sender: AnyObject) {
+    @IBAction func threeStarTapped(_ sender: AnyObject) {
         rating = 3
-        buttonOne.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonTwo.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonThree.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonFour.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
-        buttonFive.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
+        buttonOne.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonTwo.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonThree.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonFour.setImage(UIImage(named: "star_unselected"), for: UIControlState())
+        buttonFive.setImage(UIImage(named: "star_unselected"), for: UIControlState())
     }
     
-    @IBAction func fourStarTapped(sender: AnyObject) {
+    @IBAction func fourStarTapped(_ sender: AnyObject) {
         rating = 4
-        buttonOne.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonTwo.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonThree.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonFour.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonFive.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
+        buttonOne.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonTwo.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonThree.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonFour.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonFive.setImage(UIImage(named: "star_unselected"), for: UIControlState())
     }
     
-    @IBAction func fiveStarTapped(sender: AnyObject) {
+    @IBAction func fiveStarTapped(_ sender: AnyObject) {
         rating = 5
-        buttonOne.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonTwo.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonThree.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonFour.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
-        buttonFive.setImage(UIImage(named: "star_selected"), forState: UIControlState.Normal)
+        buttonOne.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonTwo.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonThree.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonFour.setImage(UIImage(named: "star_selected"), for: UIControlState())
+        buttonFive.setImage(UIImage(named: "star_selected"), for: UIControlState())
     }
     
     func setupButtons() {
-        buttonOne.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
-        buttonTwo.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
-        buttonThree.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
-        buttonFour.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
-        buttonFive.setImage(UIImage(named: "star_unselected"), forState: UIControlState.Normal)
+        buttonOne.setImage(UIImage(named: "star_unselected"), for: UIControlState())
+        buttonTwo.setImage(UIImage(named: "star_unselected"), for: UIControlState())
+        buttonThree.setImage(UIImage(named: "star_unselected"), for: UIControlState())
+        buttonFour.setImage(UIImage(named: "star_unselected"), for: UIControlState())
+        buttonFive.setImage(UIImage(named: "star_unselected"), for: UIControlState())
     }
     
-    @IBAction func addEntryButtonTapped(sender: AnyObject) {
+    @IBAction func addEntryButtonTapped(_ sender: AnyObject) {
 //        guard
 //            let myName = labelHeadline.text,
 //            let title = labelSubtitle.text
@@ -124,14 +124,14 @@ class AddEntryViewController: UIViewController {
 
         let itemToPass = JournalEntry(name: name, title: itemTitle, type: mediaType, rating: rating, note: itemDescription, image: "", yearMade: wasMade)
         delegate?.userAddedItem(itemToPass)
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
         
         
     }
     
-    @IBAction func cancelButtonTapped(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelButtonTapped(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
 
 }

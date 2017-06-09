@@ -16,10 +16,10 @@ class JournalEntry {
     let rating: Int
     let note: String
     let image: String
-    let created: NSDate
+    let created: Date
     let yearMade: Int
     
-    init (name: String, title: String, type: String, rating: Int = 0, note: String, image: String, created: NSDate = NSDate(), yearMade: Int) {
+    init (name: String, title: String, type: String, rating: Int = 0, note: String, image: String, created: Date = Date(), yearMade: Int) {
         self.name = name
         self.title = title
         self.type = type

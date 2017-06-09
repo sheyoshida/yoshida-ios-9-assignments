@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
     var rating: Int = 0
     var typeOfMedia: String = ""
     var descriptionText: String = ""
-    var dateText = NSDate()
+    var dateText = Date()
     
     var detailData: JournalEntry?
     
@@ -39,7 +39,7 @@ class DetailViewController: UIViewController {
             rating = detail.rating
             typeOfMedia = detail.type
             descriptionText = detail.note
-            dateText = detail.created
+            dateText = detail.created as Date
         }
         
         setupImageView()
@@ -50,29 +50,30 @@ class DetailViewController: UIViewController {
     }
     
     func setupStackView() {
-        if UIScreen.mainScreen().sizeType == .iPhone5 || UIScreen.mainScreen().sizeType == .iPhone4 {
+        if UIScreen.main.sizeType == .iPhone5 || UIScreen.main.sizeType == .iPhone4 {
             constraintStackViewHeight.constant = 60.0
         }
     }
     
+    // NOTE: fix detail view's text view...
     func setupTextView() {
-        let theAttributedString = try! NSAttributedString(data: descriptionText.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+//        let theAttributedString = try! NSAttributedString(data: descriptionText.data(using: String.Encoding.utf8, allowLossyConversion: false)!, options: [NSAttributedString.DocumentAttributeKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
         
-        textView.attributedText = theAttributedString
-        textView.font = UIFont(name: "Helvetica", size: 15)
+//        textView.attributedText = theAttributedString
+//        textView.font = UIFont(name: "Helvetica", size: 15)
     }
     
     func setupDateLabel() {
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = NSDateFormatterStyle.LongStyle
-        let dateString = formatter.stringFromDate(dateText)
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.long
+        let dateString = formatter.string(from: dateText)
         labelDate.text = "Added: " + dateString
     }
     
     // text view begins at top
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        textView.setContentOffset(CGPointZero, animated: false)
+        textView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     func setupImageView() {

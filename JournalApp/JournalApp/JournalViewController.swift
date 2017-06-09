@@ -22,28 +22,25 @@ class ViewController: UIViewController {
         tableView.estimatedRowHeight = 161
         tableView.tableFooterView = UIView() // hide empty views
         
-        
-
-
     }
     
-    @IBAction func addButtonTapped(sender: AnyObject) {
+    @IBAction func addButtonTapped(_ sender: AnyObject) {
         
         let storyboard = UIStoryboard(name: "AddEntry", bundle: nil)
         if
-            let addNavigationController = storyboard.instantiateViewControllerWithIdentifier("SearchEntryNavIdentifier") as? UINavigationController,
+            let addNavigationController = storyboard.instantiateViewController(withIdentifier: "SearchEntryNavIdentifier") as? UINavigationController,
             let addViewController = addNavigationController.topViewController as? SearchEntryViewController {
         
             addViewController.delegatePassItem = self // connect delegate
-            presentViewController(addNavigationController, animated: true, completion: {
+            present(addNavigationController, animated: true, completion: {
                 // insert completion block logic here
             })
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailIdentifier" {
-            if let detailViewController = segue.destinationViewController as? DetailViewController {
+            if let detailViewController = segue.destination as? DetailViewController {
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let detailData = journalItems[indexPath.row]
                     detailViewController.detailData = detailData
@@ -56,74 +53,72 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return journalItems.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! JournalCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JournalCell
         
         let reviewedItem = journalItems[indexPath.row]
         
         cell.labelTitle?.text = reviewedItem.title + " (" + String(reviewedItem.yearMade) + ")"
         cell.labelDetail?.text = reviewedItem.name
         
-        // TODO: - make switch statements
-        
         //  set images for each cell
-        if reviewedItem.type == "Book" {
+        switch reviewedItem.type {
+            case "Book":
             cell.imageView?.image = UIImage(named: "book_unselected")
-        }
-        if reviewedItem.type == "Album" {
-            cell.imageView?.image = UIImage(named: "album_unselected")
-        }
-        if reviewedItem.type == "Film" {
+            case "Album":
+                cell.imageView?.image = UIImage(named: "album_unselected")
+        case "Film":
             cell.imageView?.image = UIImage(named: "movie_unselected")
+        default:
+            break
         }
         
         // set star rating images
-        if reviewedItem.rating == 1 {
+        switch reviewedItem.rating {
+        case 1:
             cell.imageStarOne?.image = UIImage(named: "star_selected")
-        }
-        if reviewedItem.rating == 2 {
+        case 2:
             cell.imageStarOne?.image = UIImage(named: "star_selected")
             cell.imageStarTwo?.image = UIImage(named: "star_selected")
-        }
-        if reviewedItem.rating == 3 {
+        case 3:
             cell.imageStarOne?.image = UIImage(named: "star_selected")
             cell.imageStarTwo?.image = UIImage(named: "star_selected")
             cell.imageStarThree?.image = UIImage(named: "star_selected")
-        }
-        if reviewedItem.rating == 4 {
+        case 4:
             cell.imageStarOne?.image = UIImage(named: "star_selected")
             cell.imageStarTwo?.image = UIImage(named: "star_selected")
             cell.imageStarThree?.image = UIImage(named: "star_selected")
             cell.imageStarFour?.image = UIImage(named: "star_selected")
-        }
-        if reviewedItem.rating == 5 {
+        case 5:
             cell.imageStarOne?.image = UIImage(named: "star_selected")
             cell.imageStarTwo?.image = UIImage(named: "star_selected")
             cell.imageStarThree?.image = UIImage(named: "star_selected")
             cell.imageStarFour?.image = UIImage(named: "star_selected")
             cell.imageStarFive?.image = UIImage(named: "star_selected")
+        default:
+            break
         }
         
         // stretch separator across entire view
         cell.preservesSuperviewLayoutMargins = false
-        cell.layoutMargins = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsets.zero
 
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
         
     }
 }
 
 extension ViewController: PassItemDelegate {
-    func passItemToRootView(item: JournalEntry) {
-        journalItems.insert(item, atIndex: 0)
+    func passItemToRootView(_ item: JournalEntry) {
+        journalItems.insert(item, at: 0)
         // TODO: - add data persistance here
 //        journalItems.append(item)
         tableView.reloadData()
